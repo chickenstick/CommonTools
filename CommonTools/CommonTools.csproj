@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4538657E-9F34-4747-B50A-EC58FCDEE12C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommonTools</RootNamespace>
+    <AssemblyName>CommonTools</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\CommandTimeoutLengths.cs" />
+    <Compile Include="Data\DatabaseFactory.cs" />
+    <Compile Include="Data\DatabaseParameter.cs" />
+    <Compile Include="Data\DatabaseType.cs" />
+    <Compile Include="Data\DataCommand.cs" />
+    <Compile Include="Data\DataProviders\DataProviderBase.cs" />
+    <Compile Include="Data\DataProviders\SqlServerDataProvider.cs" />
+    <Compile Include="Data\Extensions\DataReaderExtensions.cs" />
+    <Compile Include="Data\Extensions\DbCommandExtensions.cs" />
+    <Compile Include="Encryption\DefaultEncryptionStrategy.cs" />
+    <Compile Include="Encryption\EncryptionHelper.cs" />
+    <Compile Include="Encryption\EncryptionStrategy.cs" />
+    <Compile Include="Encryption\EncryptionStrategyBase.cs" />
+    <Compile Include="Encryption\EncryptionStrategyFactory.cs" />
+    <Compile Include="Enumerations\EnumDescriptionAttribute.cs" />
+    <Compile Include="Enumerations\EnumLookup.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\BinarySerializationStrategy.cs" />
+    <Compile Include="Serialization\JsonSerializationStrategy.cs" />
+    <Compile Include="Serialization\SerializationHelper.cs" />
+    <Compile Include="Serialization\SerializationStrategyBase.cs" />
+    <Compile Include="Serialization\SerializationStrategyFactory.cs" />
+    <Compile Include="Serialization\SerializationType.cs" />
+    <Compile Include="Serialization\XmlSerializationStrategy.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
